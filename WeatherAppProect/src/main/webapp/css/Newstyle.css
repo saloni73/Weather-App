@@ -1,0 +1,147 @@
+/* ================= RESULT PAGE LAYOUT ================= */
+body.result-page {
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Segoe UI", Arial, sans-serif;
+
+  background-size: 300% 300%;
+  animation: bgMove 12s ease infinite;
+  transition: background 0.6s ease-in-out;
+}
+
+/* Background animation */
+@keyframes bgMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= DAY / NIGHT BACKGROUNDS ================= */
+body.result-page[data-time="night"] {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.result-page[data-time="day"][data-weather="Clear"] {
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+}
+
+body.result-page[data-time="day"][data-weather="Clouds"] {
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+}
+
+body.result-page[data-time="day"][data-weather="Rain"] {
+  background: linear-gradient(135deg, #4b79a1, #283e51);
+}
+
+/* Fallback */
+body.result-page:not([data-weather]) {
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+/* ================= WEATHER CARD ================= */
+.weather-card {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 32px;
+  width: 360px;
+  text-align: center;
+
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+
+  animation: fadeIn 0.8s ease-out;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.35);
+}
+
+/* ================= WEATHER ICON ================= */
+.weather-icon {
+  width: 120px;
+  margin: 12px auto;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.25));
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= TEMPERATURE ================= */
+.temp {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 12px 0;
+  animation: pulseTemp 2s infinite;
+}
+
+@keyframes pulseTemp {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* ================= INFO ROWS ================= */
+.info {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #333;
+
+  opacity: 0;
+  animation: slideIn 0.6s ease forwards;
+}
+
+.info:nth-child(1) { animation-delay: 0.1s; }
+.info:nth-child(2) { animation-delay: 0.2s; }
+.info:nth-child(3) { animation-delay: 0.3s; }
+.info:nth-child(4) { animation-delay: 0.4s; }
+.info:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ================= CLOCK ICON ================= */
+.fa-clock {
+  margin-right: 6px;
+  color: #444;
+  animation: tick 1s infinite;
+}
+
+@keyframes tick {
+  50% { transform: rotate(6deg); }
+}
+
+/* ================= ERROR ================= */
+.error {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* ================= FADE IN ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
