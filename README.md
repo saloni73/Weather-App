@@ -1,35 +1,23 @@
 🌦️ Weather App
 
-A Java-based web application that shows real-time weather information for any city using the OpenWeatherMap API.
+A Java-based web application that displays real-time weather information for any city using the OpenWeatherMap API.
 
 🚀 Features
 
-Search weather by city
+🌍 Search weather by city name
 
-Temperature, humidity & weather condition
+🌡️ Temperature, humidity & weather condition
 
-Real-time API data
+🔄 Real-time API data
 
-Clean & responsive UI
+🎨 Clean & responsive UI
 
 🛠 Tech Stack
 
-Java (Servlet, JSP)
+Backend: Java (Servlet, JSP)
 
-HTML, CSS, JavaScript
+Frontend: HTML, CSS, JavaScript
 
-OpenWeatherMap API
+API: OpenWeatherMap
 
-Apache Tomcat
-
-▶️ Run
-
-Add your OpenWeatherMap API key in Servlet
-
-Deploy on Tomcat
-
-Open: http://localhost:8080/Weather-App
-
-👩‍💻 Author
-
-Saloni Parashar
+Server: Apache Tomcat
